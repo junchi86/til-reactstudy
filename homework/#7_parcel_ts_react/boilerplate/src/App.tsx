@@ -12,6 +12,8 @@ const Div = styled.div`
 interface IState {
   changeText: string;
   todos: any[];
+}
+interface TodosObject {
   id: string;
   text: string;
 }
@@ -41,7 +43,7 @@ const App: React.FunctionComponent = () => {
         <button>Todo!</button>
       </form>
       <ul>
-        {todos.map((i: IState) => (
+        {todos.map((i: TodosObject) => (
           <li key={i.id}>
             {i.text}
             <button onClick={onDelete} id={i.id}>
